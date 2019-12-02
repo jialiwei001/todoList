@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <title>Title</title>
+</head>
+<body>
+
+<div>
+    <div class="col-sm-12" style="height:200px">
+
+        <h2 class="alert alert-info text-center" >这是编辑页面</h2>
+    </div>
+
+    <form action="update" class="form-horizontal" role="form">
+        <div class="form-group">
+            <div class="col-sm-3"></div>
+            <label for="firstname" class="col-sm-2 control-label">编号：</label>
+            <div class="col-sm-2">
+                <input type="text" name="id" class="form-control" id="firstname" th:value="${todo.id}">
+            </div>
+            <div class="col-sm-5"></div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-3"></div>
+            <label for="firstname" class="col-sm-2 control-label">标题：</label>
+            <div class="col-sm-2">
+                <input type="text" name="name" class="form-control" id="firstname" th:value="${todo.name}">
+            </div>
+            <div class="col-sm-5"></div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-3"></div>
+            <label for="firstname" class="col-sm-2 control-label">内容：</label>
+            <div class="col-sm-2">
+                <textarea type="text" name="note" class="form-control" id="firstname"
+                          placeholder="请输入内容" rows="4" th:text="${todo.note}"></textarea>
+            </div>
+            <div class="col-sm-5"></div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-3"></div>
+            <label for="lastname" class="col-sm-2 control-label">时间：</label>
+            <div class="col-sm-2">
+                <input type="date" name="date" class="form-control" id="lastname" th:value="${todo.date}">
+            </div>
+            <div class="col-sm-5"></div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-3"></div>
+            <label for="lastname" class="col-sm-2 control-label">级别：</label>
+            <div class="col-sm-2">
+                <label class="radio-inline">
+                    <input type="radio" name="level" id="optionsRadios4"  value="低" th:checked="${todo.level == '低'}"> 低
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="level" id="optionsRadios4"  value="中" th:checked="${todo.level == '中'}"> 中
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="level" id="optionsRadios4"  value="高" th:checked="${todo.level == '高'}"> 高
+                </label>
+            </div>
+            <div class="col-sm-5"></div>
+        </div>
+        <div class="form-group">
+
+            <div class="col-sm-offset-5 col-sm-8">
+                <button type="submit" class="btn btn-default">编辑</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
